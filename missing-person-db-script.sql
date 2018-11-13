@@ -1,6 +1,6 @@
--- create user 'cfbd'@'localhost' identified by '1234';	# password will be changed on production 
--- 
--- grant all privileges on *.* to 'cfbd'@'localhost';
+create user 'cfbd'@'localhost' identified by '1234';	# password will be changed on production 
+ 
+grant all privileges on *.* to 'cfbd'@'localhost';
  
 create database if not exists missing_person;
 
