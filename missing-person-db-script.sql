@@ -15,21 +15,21 @@ SET sql_mode = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZER
 
 DROP TABLE IF EXISTS users;
 
-CREATE TABLE users (							# key specification must with a key length
-	uuid 				VARCHAR(30) not null,	# thats why text changed to varchar 
-	first_name 			text not null,		
-	last_name 			text,
-	profile_picture 	text,
-    primary_address 	text not null,
-    secondary_address 	text,
-    contact_number 		text not null,
-	email 				text not null,
-    password 			text not null,
-    created_at 			timestamp,
-    updated_at 			timestamp,
-    deleted_at 			timestamp,
-    primary key (uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE users (
+    uuid VARCHAR(30) NOT NULL,
+    first_name TEXT NOT NULL,
+    last_name TEXT,
+    profile_picture TEXT,
+    primary_address TEXT NOT NULL,
+    secondary_address TEXT,
+    contact_number TEXT NOT NULL,
+    email TEXT NOT NULL,
+    password TEXT NOT NULL,
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP,
+    deleted_at TIMESTAMP,
+    PRIMARY KEY (uuid)
+)  ENGINE=INNODB DEFAULT CHARSET=LATIN1;
 
 
 DROP TABLE IF EXISTS reports;
@@ -56,23 +56,25 @@ CREATE TABLE reports (
     
 DROP TABLE IF EXISTS address;
 
-CREATE TABLE address (		
-	report_id 			int not null,
-	uuid 				VARCHAR(30) not null,
-	street_address 		text,
-    thana 				text,
-    district_code 		text,	# is this district code or postal code? if its district code then how it will be counted ?
-    latitude 			decimal(9,6) not null,
-    longitude 			decimal(9,6) not null,
-    victim_location 	boolean not null,
-    user_ref 			text not null,
-    created_at 			timestamp,
-    updated_at 			timestamp,
-    deleted_at 			timestamp,
-    primary key (report_id, uuid),
-	foreign key (report_id) references reports(report_id),
-	foreign key(uuid) references users(uuid)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE address (
+    report_id INT NOT NULL,
+    uuid VARCHAR(30) NOT NULL,
+    street_address TEXT,
+    thana TEXT,
+    district_code TEXT,
+    latitude DECIMAL(9 , 6 ) NOT NULL,
+    longitude DECIMAL(9 , 6 ) NOT NULL,
+    victim_location BOOLEAN NOT NULL,
+    user_ref TEXT NOT NULL,
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP,
+    deleted_at TIMESTAMP,
+    PRIMARY KEY (report_id , uuid),
+    FOREIGN KEY (report_id)
+        REFERENCES reports (report_id),
+    FOREIGN KEY (uuid)
+        REFERENCES users (uuid)
+)  ENGINE=INNODB DEFAULT CHARSET=LATIN1;
 
 
 # test insert into users
