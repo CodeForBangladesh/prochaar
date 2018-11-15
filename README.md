@@ -1,7 +1,7 @@
 # README
 
 
-###Features
+### Features
 
 - User Registration
 - Complete user profile
@@ -9,13 +9,13 @@
 - Report missing person
 - Location wise push search notifications after a specific time
 
-###Requirements
+### Requirements
 
 - Ruby: `2.4.1`
 - Rails: `5.1.4`
 - MySQL
 
-###Installation
+### Installation
 
 - [Install ruby using RVM](https://bokdharmik.wordpress.com/2015/06/27/%E0%A6%89%E0%A6%AC%E0%A7%81%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A7%81%E0%A6%A4%E0%A7%87-ruby-on-rails-%E0%A6%B8%E0%A7%87%E0%A6%9F%E0%A6%BE%E0%A6%AA/)
 - [Install MySQL](https://websiteforstudents.com/install-phpmyadmin-apache2-and-mysql-on-ubuntu-18-04-lts-beta-server/)
@@ -29,7 +29,7 @@
 
 
 
-###Contribute
+### Contribute
 
 > Fork the repository then create pull request. 
 
