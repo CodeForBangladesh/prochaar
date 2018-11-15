@@ -1,0 +1,2 @@
+PROJECT = tools
+VERSION = v0.1.0
