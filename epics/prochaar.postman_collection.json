@@ -1,0 +1,164 @@
+{
+	"variables": [],
+	"info": {
+		"name": "prochaar",
+		"_postman_id": "4582a55e-adf7-a94e-8f11-375c98f485c1",
+		"description": "Collection of requests for Missing-Person Mobile APP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"description": "User AUthentication/Authorization",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"url": "http://localhost:3000/api/v1/auth/register",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWNlMjAyNmUtZjc1MC00NDEyLTlkZWEtNGFiZThhM2EwM2Q4IiwiZXhwIjoxNTQyODc4NTMxfQ.FEdI7z7XMEYmCFQVqelYar42TM1Ta6NEfuoBvwXZ-7U",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user1@prochaar.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123123",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Url: http://localhost:3000/api/v1/auth/register\n\nSending parameters: \n- email (string)\n- password (string)\n\nResponse:\n- OK: {\"message\": \"User created successfully\"}\n- Error:  {\n    \"email\": [\n        \"has already been taken\"\n    ]\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"url": "http://localhost:3000/api/v1/auth/login",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user1@prochaar.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123123123",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "URL: http://localhost:3000/api/v1/auth/login\n\nParameters:\n- email\n- password\n\nResponse:\n- OK: {\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYjE5ODAxZjItNzk5MC00NDBmLWFjOWItODA4MTI0M2FjMmVlIiwiZXhwIjoxNTQzMjk5MDg0fQ.HMoLJj6UqgyWQXBaBibnk2WIF0dZGcRqbGcRXWzLTpk\",\n    \"message\": \"Login Successful\"\n}\n- Error: {\n    \"error\": {\n        \"user_authentication\": [\n            \"Invalid credentials\"\n        ]\n    }\n}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profiles",
+			"description": "Update/Show User Profile",
+			"item": [
+				{
+					"name": "Details",
+					"request": {
+						"url": "http://localhost:3000/api/v1/profiles/1cf366b4-8ac8-434e-b8e7-ce8f4c6ff273",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYjE5ODAxZjItNzk5MC00NDBmLWFjOWItODA4MTI0M2FjMmVlIiwiZXhwIjoxNTQzMjk5MjI0fQ.GPXCX-ZDCNoxC-aUK2PX-E-FirWhKOAnQjpkUecs_VE",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "URL: http://localhost:3000/api/v1/profiles/<profile_id>\n\nParameters:\n- Authorization as HEADERS\n\nResponse:\n- OK:\n{\n    \"id\": \"1cf366b4-8ac8-434e-b8e7-ce8f4c6ff273\",\n    \"user_id\": \"43417a03-312f-4eb5-8f77-6f4c90625d02\",\n    \"first_name\": null,\n    \"last_name\": null,\n    \"gender\": null,\n    \"photo\": null,\n    \"date_of_birth\": null,\n    \"full_address\": null,\n    \"contact_number\": null,\n    \"district\": null,\n    \"division\": null,\n    \"street_address\": null,\n    \"zip_code\": null,\n    \"latitude\": null,\n    \"longitude\": null,\n    \"created_at\": \"2018-11-20T05:52:40.000Z\",\n    \"updated_at\": \"2018-11-20T05:52:40.000Z\"\n}\n- Error:\n{\n    \"message\": \"Couldn't find Profile with 'id'=1cf366b4-8ac8-434e-b8e7-ce8f4c6ff27\"\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:3000/api/v1/profiles/a481b358-53ba-406e-8dc4-9c144e65daa6",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMDRmNDgxMjgtYTQ4Mi00NDllLWEyMGQtNDVjMTRiOTViMTk5IiwiZXhwIjoxNTQzMzAwMzEwfQ.MJyNzU4BB9gx3MOorgHe5WwoOg5XN_fkfxb9EloOeww",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Imtiaz",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Emu",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "latitude",
+									"value": "23.7656434",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "longitude",
+									"value": "90.4102093",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "full_address",
+									"value": "Dhaka, Bangladesh",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "contact_number",
+									"value": "0172898963",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "URL: http://localhost:3000/api/v1/profiles/<profile_id>\n\nParameters:\n- Authorization as HEADERS\n- Mandatory (first_name, last_name, contact_number, latitude, longitude, full_address)\n- Optional (gender, photo, date_of_birth, district, division, street_address, zip_code)\n\nResponse:\n- OK:\n{\n    \"id\": \"a481b358-53ba-406e-8dc4-9c144e65daa6\",\n    \"first_name\": \"Imtiaz\",\n    \"last_name\": \"Emu\",\n    \"full_address\": \"Dhaka, Bangladesh\",\n    \"contact_number\": \"0172898963\",\n    \"latitude\": 23.2313123,\n    \"longitude\": 90.2132132,\n    \"user_id\": \"04f48128-a482-449e-a20d-45c14b95b199\",\n    \"gender\": null,\n    \"photo\": null,\n    \"date_of_birth\": null,\n    \"district\": null,\n    \"division\": null,\n    \"street_address\": null,\n    \"zip_code\": null,\n    \"created_at\": \"2018-11-20T06:29:10.000Z\",\n    \"updated_at\": \"2018-11-20T06:38:31.000Z\"\n}\n- Error:\n{\n    \"message\": \"Couldn't find Profile with 'id'=1cf366b4-8ac8-434e-b8e7-ce8f4c6ff27\"\n}"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
