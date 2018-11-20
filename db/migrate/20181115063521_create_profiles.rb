@@ -6,7 +6,6 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.string    :first_name
       t.string    :last_name
       t.string    :gender
-      t.string    :gender
       t.string    :photo
       t.date      :date_of_birth
       t.string    :full_address
@@ -15,8 +14,8 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.string    :division
       t.string    :street_address
       t.string    :zip_code
-      t.decimal   :latitude
-      t.decimal   :longitude
+      t.decimal   :latitude, precision: 10, scale: 6
+      t.decimal   :longitude, precision: 10, scale: 6
 
       t.timestamps
     end
