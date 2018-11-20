@@ -2,6 +2,7 @@ module Api
   module V1
     class ProfilesController < ApplicationController
       before_action :set_profile
+      before_action :current_user_profile?, only: [:update]
 
       def show
         render json: @profile
@@ -26,6 +27,10 @@ module Api
 
       def set_profile
         @profile = Profile.find(params[:id])
+      end
+
+      def current_user_profile?
+        render json: { error: 'Not Authorized' }, status: 401 unless @current_user == @profile.user
       end
 
     end
