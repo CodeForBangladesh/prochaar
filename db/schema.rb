@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 20181115064312) do
     t.string "division"
     t.string "street_address"
     t.string "zip_code"
-    t.decimal "latitude", precision: 10
-    t.decimal "longitude", precision: 10
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
