@@ -5,6 +5,7 @@ class Profile < ApplicationRecord
   # == Attributes == #
 
   # == File Uploader == #
+  mount_uploader :photo, ProfilePhotoUploader
 
   # == Modules == #
 
