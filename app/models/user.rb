@@ -20,6 +20,7 @@ class User < ApplicationRecord
 
   # == Associations and Nested Attributes == #
   has_one :profile, dependent: :destroy
+  has_many :reports, dependent: :destroy
 
   # == Instance methods == #
   has_secure_password
