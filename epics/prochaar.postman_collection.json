@@ -159,6 +159,288 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Reports",
+			"description": "Create, Read, Update, Archive - Missing Person Reports",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"url": "http://localhost:3000/api/v1/reports",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMWJjYmU0ZWEtMWRjOC00NGM2LWI1YjYtODgzM2ZmMmU5OTVhIiwiZXhwIjoxNTQzNzM0MzY1fQ.zMQlIvhv_Krqp7HMbixHDcY_5AQXlgcxQGf9txJ9n_E",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Harano Biggopti 2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "{\"age\": \"2.3 years\", \"height\": \"2ft 3in\", \"sex\": \"male\"}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "last_location",
+									"value": "Zhigatola",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "missing_since",
+									"value": "2018-11-25 07:05:04",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "contact_no",
+									"value": "23123123123",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"description": "",
+									"type": "file",
+									"src": "4.jpg"
+								},
+								{
+									"key": "is_found",
+									"value": "false",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "URL: http://localhost:3000/api/v1/reports\n\nParameters:\n- Authorization as HEADERS\n- Mandatory (title, details, contact_no, last_location, missing_since, photo)\n- Optional (archived_at)\n\nResponse:\n- OK:\n{\n    \"id\": \"3a65faf6-c996-4eda-8f4c-bc13b35b4c3a\",\n    \"reported_by\": \"1bcbe4ea-1dc8-44c6-b5b6-8833ff2e995a\",\n    \"title\": \"Harano Biggopti 2\",\n    \"details\": \"{\\\"age\\\": \\\"2.3 years\\\", \\\"height\\\": \\\"2ft 3in\\\", \\\"sex\\\": \\\"male\\\"}\",\n    \"last_location\": \"Zhigatola\",\n    \"photo\": {\n        \"url\": \"/uploads/report/photo/3a65faf6-c996-4eda-8f4c-bc13b35b4c3a/4.jpg\"\n    },\n    \"missing_since\": \"2018-11-25T07:05:04.000Z\",\n    \"contact_no\": \"23123123123\",\n    \"is_found\": false,\n    \"archived_at\": null,\n    \"created_at\": \"2018-11-25T07:54:08.000Z\",\n    \"updated_at\": \"2018-11-25T07:54:08.000Z\"\n}\n- Error:\n{\n    Missing attribute errors\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"url": "http://localhost:3000/api/v1/reports/3a65faf6-c996-4eda-8f4c-bc13b35b4c3a",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMWJjYmU0ZWEtMWRjOC00NGM2LWI1YjYtODgzM2ZmMmU5OTVhIiwiZXhwIjoxNTQzNzM0MzY1fQ.zMQlIvhv_Krqp7HMbixHDcY_5AQXlgcxQGf9txJ9n_E",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Harano Biggopti 2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "{\"age\": \"2.3 years\", \"height\": \"2ft 3in\", \"sex\": \"male\"}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "last_location",
+									"value": "Zhigatola",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "missing_since",
+									"value": "2018-11-25 07:05:04",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "contact_no",
+									"value": "23123123123",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"description": "",
+									"type": "file",
+									"src": "4.jpg"
+								},
+								{
+									"key": "is_found",
+									"value": "true",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "URL: http://localhost:3000/api/v1/reports/<report_id>\n\nParameters:\n- Authorization as HEADERS\n- Mandatory (title, details, contact_no, last_location, missing_since, photo)\n- Optional (archived_at)\n\nResponse:\n- OK:\n{\n    \"id\": \"3a65faf6-c996-4eda-8f4c-bc13b35b4c3a\",\n    \"title\": \"Harano Biggopti 2\",\n    \"details\": \"{\\\"age\\\": \\\"2.3 years\\\", \\\"height\\\": \\\"2ft 3in\\\", \\\"sex\\\": \\\"male\\\"}\",\n    \"last_location\": \"Zhigatola\",\n    \"photo\": {\n        \"url\": \"/uploads/report/photo/3a65faf6-c996-4eda-8f4c-bc13b35b4c3a/4.jpg\"\n    },\n    \"missing_since\": \"2018-11-25T07:05:04.000Z\",\n    \"contact_no\": \"23123123123\",\n    \"is_found\": true,\n    \"reported_by\": \"1bcbe4ea-1dc8-44c6-b5b6-8833ff2e995a\",\n    \"archived_at\": null,\n    \"created_at\": \"2018-11-25T07:54:08.000Z\",\n    \"updated_at\": \"2018-11-25T07:58:14.000Z\"\n}\n- Error:\n{\n    Missing attribute errors\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "Detail",
+					"request": {
+						"url": "http://localhost:3000/api/v1/reports/3a65faf6-c996-4eda-8f4c-bc13b35b4c3a",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMWJjYmU0ZWEtMWRjOC00NGM2LWI1YjYtODgzM2ZmMmU5OTVhIiwiZXhwIjoxNTQzNzM0MzY1fQ.zMQlIvhv_Krqp7HMbixHDcY_5AQXlgcxQGf9txJ9n_E",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Harano Biggopti 2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "{\"age\": \"2.3 years\", \"height\": \"2ft 3in\", \"sex\": \"male\"}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "last_location",
+									"value": "Zhigatola",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "missing_since",
+									"value": "2018-11-25 07:05:04",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "contact_no",
+									"value": "23123123123",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"description": "",
+									"type": "file",
+									"src": "4.jpg"
+								},
+								{
+									"key": "is_found",
+									"value": "true",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "URL: http://localhost:3000/api/v1/reports/<report_id>\n\nParameters: None\n\nResponse:\n- OK:\n{\n    \"id\": \"3a65faf6-c996-4eda-8f4c-bc13b35b4c3a\",\n    \"title\": \"Harano Biggopti 2\",\n    \"details\": \"{\\\"age\\\": \\\"2.3 years\\\", \\\"height\\\": \\\"2ft 3in\\\", \\\"sex\\\": \\\"male\\\"}\",\n    \"last_location\": \"Zhigatola\",\n    \"photo\": {\n        \"url\": \"/uploads/report/photo/3a65faf6-c996-4eda-8f4c-bc13b35b4c3a/4.jpg\"\n    },\n    \"missing_since\": \"2018-11-25T07:05:04.000Z\",\n    \"contact_no\": \"23123123123\",\n    \"is_found\": true,\n    \"reported_by\": \"1bcbe4ea-1dc8-44c6-b5b6-8833ff2e995a\",\n    \"archived_at\": null,\n    \"created_at\": \"2018-11-25T07:54:08.000Z\",\n    \"updated_at\": \"2018-11-25T07:58:14.000Z\"\n}\n- Error:\n{\n     \"message\": \"Couldn't find Report with 'id'=3a65faf6-c996-4eda-8f4c-bc13b3b4c3a\"\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"url": "http://localhost:3000/api/v1/reports/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMWJjYmU0ZWEtMWRjOC00NGM2LWI1YjYtODgzM2ZmMmU5OTVhIiwiZXhwIjoxNTQzNzM0MzY1fQ.zMQlIvhv_Krqp7HMbixHDcY_5AQXlgcxQGf9txJ9n_E",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Harano Biggopti 2",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "{\"age\": \"2.3 years\", \"height\": \"2ft 3in\", \"sex\": \"male\"}",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "last_location",
+									"value": "Zhigatola",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "missing_since",
+									"value": "2018-11-25 07:05:04",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "contact_no",
+									"value": "23123123123",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"description": "",
+									"type": "file",
+									"src": "4.jpg"
+								},
+								{
+									"key": "is_found",
+									"value": "true",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "URL: http://localhost:3000/api/v1/reports\n\nParameters: None\n\nResponse:\n- OK:\n- List of Reports\n- \n\nError:\n{\n    Server error\n}"
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

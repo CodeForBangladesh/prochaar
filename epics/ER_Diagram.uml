@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>RailsDependency</ID>
+  <OriginalElement>Role</OriginalElement>
+  <nodes>
+    <node x="256.0" y="58.796875">User</node>
+    <node x="0.0" y="13.682291666666657">Role</node>
+    <node x="633.0" y="25.057291666666657">Report</node>
+    <node x="1056.0" y="61.234375">ApplicationRecord</node>
+    <node x="586.0" y="304.05729166666663">Profile</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Profile" target="ApplicationRecord">
+      <point x="195.0" y="-0.0" />
+      <point x="-67.5" y="11.625" />
+    </edge>
+    <edge source="User" target="Profile">
+      <point x="125.0" y="64.33333333333331" />
+      <point x="-195.0" y="-0.0" />
+    </edge>
+    <edge source="User" target="ApplicationRecord">
+      <point x="125.0" y="-64.33333333333333" />
+      <point x="586.0" y="14.557291666666657" />
+      <point x="976.0" y="14.557291666666657" />
+      <point x="-67.5" y="-3.875" />
+    </edge>
+    <edge source="Report" target="ApplicationRecord">
+      <point x="148.0" y="-0.0" />
+      <point x="976.0" y="144.55729166666666" />
+      <point x="-67.5" y="3.875" />
+    </edge>
+    <edge source="Role" target="User">
+      <point x="88.0" y="31.0" />
+      <point x="-125.0" y="-0.0" />
+    </edge>
+    <edge source="User" target="Report">
+      <point x="125.0" y="-0.0" />
+      <point x="586.0" y="144.55729166666666" />
+      <point x="-148.0" y="-0.0" />
+    </edge>
+    <edge source="Role" target="ApplicationRecord">
+      <point x="88.0" y="-31.0" />
+      <point x="256.0" y="0.0" />
+      <point x="976.0" y="0.0" />
+      <point x="-67.5" y="-11.625" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.42526837324525185" x="1541.9611650485438" y="566.9970873786408" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Association fields</Category>
+    <Category>Migration fields</Category>
+  </Categories>
+</Diagram>
+
