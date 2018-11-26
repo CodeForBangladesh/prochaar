@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181115064312) do
+ActiveRecord::Schema.define(version: 20181124054606) do
 
   create_table "profiles", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "user_id"
@@ -27,6 +27,20 @@ ActiveRecord::Schema.define(version: 20181115064312) do
     t.string "zip_code"
     t.decimal "latitude", precision: 10, scale: 6
     t.decimal "longitude", precision: 10, scale: 6
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reports", id: :string, limit: 36, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "reported_by"
+    t.string "title"
+    t.json "details"
+    t.string "last_location"
+    t.string "photo"
+    t.datetime "missing_since"
+    t.string "contact_no"
+    t.boolean "is_found", default: false
+    t.datetime "archived_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

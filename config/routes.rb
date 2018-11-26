@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'test', to: 'users#test'
 
       resources :profiles, only: [:show, :update]
+      resources :reports
 
     end
   end
