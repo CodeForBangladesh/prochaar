@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+
+  prochar-mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "prochar"
+      MYSQL_USER: "app"
+      MYSQL_PASSWORD: "app"
+    volumes:
+      - mysqltest:/var/lib/mysql
+    restart: always
+
+  prochar-backend-api:
+    build: "."
+    restart: always
+    ports:
+      - 3000:3000
+    expose:
+      - "3000"
+    depends_on:
+      - prochar-mysql
+
+volumes:
+  mysqltest:
+    driver: "local"

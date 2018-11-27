@@ -28,6 +28,17 @@
 - In your command line run - `rake db:seed`  (_It'll create a admin user in the USERS table_)
 
 
+### How to run with Docker Compose
+
+- Prerequisites: Docker and Docker Compose
+- Run following command:
+  - docker-compose build
+  - docker-compose up -d
+  - docker-compose run prochar-backend-api rake db:create 
+  - docker-compose run prochar-backend-api rake db:migrate
+  - docker-compose run prochar-backend-api rake db:seed
+- Visit http://localhost:3000/ in your browser.
+
 ### Usage
 
 - In the project's `epics` folder, there is a  `prochaar.postman_collection.json` file.
