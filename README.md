@@ -39,13 +39,13 @@
   - docker-compose run prochar-backend-api rake db:seed
 - Visit http://localhost:3000/ in your browser.
 
+
 ### Usage
 
 - In the project's `epics` folder, there is a  `prochaar.postman_collection.json` file.
 - Import the file as a collection into [POSTMAN](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 - You're now able to see the request patterns!
 - Also, in the `epics` folder, `ER_Diagram.uml` file shows the ER Diagram of current Database Structure.
-
 
 
 ### Contribute
