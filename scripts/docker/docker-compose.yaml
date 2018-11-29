@@ -1,7 +1,6 @@
 version: '3'
 
 services:
-
   prochar-mysql:
     image: mysql:5.7
     ports:
@@ -16,7 +15,7 @@ services:
     restart: always
 
   prochar-backend-api:
-    build: "."
+    image: codeforbd/prochar:latest
     restart: always
     ports:
       - 3000:3000
