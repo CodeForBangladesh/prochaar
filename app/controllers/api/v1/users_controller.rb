@@ -20,7 +20,9 @@ module Api
           response = { message: 'User created successfully'}
           render json: response, status: :created
         else
-          render json: @user.errors, status: :bad
+          render status: 400, json: {
+              validationMessage: @user.errors.full_messages.to_sentence,
+          }.to_json
         end
       end
 

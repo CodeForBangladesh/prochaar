@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   # == Validations == #
   validates_presence_of :email, :password_digest
-  validates :email, uniqueness: true
+  validates :email, uniqueness: {message: "already exist, try login."}
 
   # == Callbacks == #
   before_validation :set_id, on: :create
