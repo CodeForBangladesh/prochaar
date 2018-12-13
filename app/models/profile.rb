@@ -8,6 +8,7 @@ class Profile < ApplicationRecord
   mount_uploader :photo, ProfilePhotoUploader
 
   # == Modules == #
+  geocoded_by :latitude, :longitude
 
   # == Validations == #
   validates_presence_of :first_name, :last_name, :full_address, :contact_number, :latitude, :longitude, on: :update
@@ -16,6 +17,7 @@ class Profile < ApplicationRecord
 
   # == Callbacks == #
   before_validation :set_id, on: :create
+  after_validation :geocode
 
   # == Associations and Nested Attributes == #
   belongs_to :user
